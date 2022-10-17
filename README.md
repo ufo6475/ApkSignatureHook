@@ -37,7 +37,7 @@ apktool d target.apk
 ```
 여기서 Lcom/a/b/c 에는 해당 smali파일의 경로를 넣어준다.  
 
-[releaase](https://github.com/ufo6475/ApkSignatureHook/releases/tag/v0.1)
+[release](https://github.com/ufo6475/ApkSignatureHook/releases/tag/v0.1)   
 release apk 파일을 
 ```
 apktool d hook.apk
