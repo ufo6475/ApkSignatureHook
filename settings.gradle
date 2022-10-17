@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         jcenter()
         google()
+        maven { url "https://jitpack.io" }
     }
 }
 dependencyResolutionManagement {
@@ -9,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         jcenter()
         google()
+        maven { url "https://jitpack.io" }
     }
 }
 rootProject.name = "ApkSignatureHook"
