@@ -36,5 +36,16 @@ apktool d target.apk
     invoke-direct {v0, v1}, Lcom/ufo64/ApkSignatureHook/MainModule;-><init>(Landroid/content/Context;)V
 ```
 여기서 Lcom/a/b/c 에는 해당 smali파일의 경로를 넣어준다.  
-  
-그 후  smali 폴더들을 기존의 smali 폴더와 이름이 겹치지 않게 변경후 추가해준다.
+
+[releaase](https://github.com/ufo6475/ApkSignatureHook/releases/tag/v0.1)
+release apk 파일을 
+```
+apktool d hook.apk
+```
+를 통해 디컴파일 후 hook/smali,smali_classes2,smali_classes3 폴더들을 target/ 아래의 smali 폴더들과 이름이 겹치지 않게 변경후 target/ 에 추가해준다.
+그 후 target/lib/arm64-v8a, target/lib/armeabi-v7a 아래에 hook/lib/ 아래의 파일들을 옮겨준다.
+
+```
+apktool b target
+```
+명령어를 통해 리패키징을 한 후 apk 서명 툴을 통해 서명을 한 뒤 설치하여 사용한다.
