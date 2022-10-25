@@ -23,7 +23,7 @@ apktool d target.apk
 ```
 명령어를 통해 디컴파일한다.   
 그 후 original/META-INF/ 하에 존재하는 .RSA 확장자의 파일을 /res/raw 폴더로 옮기고 이를 CERT.RSA로 파일명을 변경 한다.(raw 폴더가 없을시 생성)  
-그 후 AndroidManifest.xml 파일을 열어 가장 먼저 실행되는 activity를 찾는다. (최상단의 <activity> tag를 찾는다) 해당 activity의 name을 통해 이에 해당하는 smali 파일을 찾아간다.  
+그 후 AndroidManifest.xml 파일을 열어 가장 먼저 실행되는 activity를 찾는다. (<action android:name="android.intent.action.MAIN"/> 가 포함된 activity) 해당 activity의 name을 통해 이에 해당하는 smali 파일을 찾아간다.  
 (예: com.a.b.c가 activity 명일 경우 smali/com/a/b/c.smali 파일)   
 이 smali 파일의 onCreate 부분을 찾아 아래와 같이 호출 직후에 코드를 추가한다.  
 ```
@@ -48,3 +48,5 @@ apktool d hook.apk
 apktool b target
 ```
 명령어를 통해 리패키징을 한 후 apk 서명 툴을 통해 서명을 한 뒤 설치하여 사용한다.
+
+*Android 9 API 28 환경 테스트 완료
